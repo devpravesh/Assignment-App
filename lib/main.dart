@@ -19,14 +19,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Assignment App',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home:
-          //  const SplashScreen()
-          LoginPage(),
-    );
+        title: 'Assignment App',
+        theme: ThemeData(
+          primarySwatch: Colors.purple,
+        ),
+        home: const SplashScreen()
+        // LoginPage(),
+        );
   }
 }
 

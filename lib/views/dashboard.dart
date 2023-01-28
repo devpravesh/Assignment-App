@@ -21,6 +21,14 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          MaterialButton(
+            onPressed: (() {
+              _controller.fetchcharacter();
+            }),
+            child: Text("Fetch"),
+          )
+        ],
         title: const Text("Dashboard"),
         centerTitle: true,
         bottom: const TabBar(

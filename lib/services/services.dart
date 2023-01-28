@@ -14,13 +14,14 @@ class ApiProvider {
   static Future fetchhoqwartsList() async {
     try {
       var response = await client
-          .get(Uri.https("hp-api.onrender.com", '/api/characters/students'));
-      var jsonBody = jsonDecode(response.body);
+          .get(Uri.https("hp-api.onrender.com", '/api/characters/students'))
+          .timeout(Duration(seconds: 8));
       log(response.statusCode.toString());
 
       if (response.statusCode == 200) {
-        // print(jsonBody);
-        return hoqwartsModelFromJson(response.body);
+        var jsonBody = jsonDecode(response.body);
+        print(jsonBody);
+        return HoqwartsModel.fromJson(jsonBody);
         // }
       } else {
         return HoqwartsModel.withError(

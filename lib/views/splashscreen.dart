@@ -1,4 +1,5 @@
 import 'package:assignment_app/main.dart';
+import 'package:assignment_app/views/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.offAll(() => const BottomNavBar());
+      Get.offAll(() => LoginPage());
     });
     super.initState();
   }
