@@ -112,11 +112,12 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               const Text('Does not have account?'),
               TextButton(
-                  onPressed: _register,
-                  child: const Text(
-                    'Sign Up',
-                    style: TextStyle(fontSize: 20),
-                  ))
+                onPressed: _register,
+                child: const Text(
+                  'Sign Up',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
             ],
           ),
         ],

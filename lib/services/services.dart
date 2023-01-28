@@ -16,12 +16,17 @@ class ApiProvider {
       var response = await client
           .get(Uri.https("hp-api.onrender.com", '/api/characters/students'))
           .timeout(Duration(seconds: 8));
-      log(response.statusCode.toString());
+      // log(response.statusCode.toString());
 
       if (response.statusCode == 200) {
-        var jsonBody = jsonDecode(response.body);
-        print(jsonBody);
-        return HoqwartsModel.fromJson(jsonBody);
+        var jsonBody = json.decode(response.body) as List;
+        // print(jsonBody);
+        return jsonBody.map((e) {
+          final res = e as Map<String, dynamic>;
+          // log(e.toString());
+          return HoqwartsModel.fromJson(res);
+        }).toList();
+        // return HoqwartsModel.fromJson(jsonBody);
         // }
       } else {
         return HoqwartsModel.withError(
