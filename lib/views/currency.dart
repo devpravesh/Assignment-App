@@ -86,7 +86,9 @@ class _CurrencyState extends State<Currency> {
                 ListTile(
                     title: TextField(
                       // controller: fromTextController,
-                      decoration: InputDecoration(border: OutlineInputBorder()),
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: "Enter Amount"),
                       onChanged: (value) {
                         fromTextController.text = value;
                       },
@@ -117,7 +119,7 @@ class _CurrencyState extends State<Currency> {
                     title: Chip(
                       label: result != null
                           ? Text(
-                              "$result",
+                              "Rs. $result",
                             )
                           : Text(""),
                     ),
