@@ -5,7 +5,7 @@ import 'package:assignment_app/services/services.dart';
 import 'package:get/get.dart';
 
 class DashboardController extends GetxController {
-  var hoqwartsres = [].obs;
+  List<HoqwartsModel> hoqwartsres = <HoqwartsModel>[].obs;
   @override
   void onInit() {
     fetchcharacter();
@@ -14,11 +14,10 @@ class DashboardController extends GetxController {
 
   void fetchcharacter() async {
     var res = await ApiProvider.fetchhoqwartsList();
+    log('test $res');
     if (res != null) {
       // log(res.toString());
-      hoqwartsres.assign(res);
-      log(res.toString());
-      print(hoqwartsres.toString());
+      hoqwartsres.addAll(res);
     }
   }
 }

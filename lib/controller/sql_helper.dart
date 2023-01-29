@@ -156,7 +156,7 @@ class DatabaseHelper {
     return res;
   }
 
-  Future<User?> selectUser(var user) async {
+  Future<dynamic> selectUser(user) async {
     print("Select User");
     print(user.username);
     print(user.password);
