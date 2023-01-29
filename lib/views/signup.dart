@@ -67,8 +67,6 @@ class _SignUpState extends State<SignUp> {
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Username is Require";
-                      } else if (value.contains("@")) {
-                        return "Any Special Character Not Allowed";
                       }
                       return null;
                     },
