@@ -50,7 +50,6 @@ class _CurrencyState extends State<Currency> {
       result = responseBody["conversion_result"].toString();
     });
     print(result);
-    // return "Success";
   }
 
   _onFromChanged(String value) {
@@ -86,17 +85,18 @@ class _CurrencyState extends State<Currency> {
                 ListTile(
                     title: TextField(
                       // controller: fromTextController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: "Enter Amount"),
                       onChanged: (value) {
                         fromTextController.text = value;
                       },
-                      style: TextStyle(fontSize: 20.0, color: Colors.black),
+                      style:
+                          const TextStyle(fontSize: 20.0, color: Colors.black),
                       keyboardType:
-                          TextInputType.numberWithOptions(decimal: true),
+                          const TextInputType.numberWithOptions(decimal: true),
                     ),
-                    trailing: Text("USD")
+                    trailing: const Text("USD")
                     // _buildDropDownButton(fromCurrency),
                     ),
                 GestureDetector(
@@ -121,9 +121,9 @@ class _CurrencyState extends State<Currency> {
                           ? Text(
                               "Rs. $result",
                             )
-                          : Text(""),
+                          : const Text(""),
                     ),
-                    trailing: Text("INR")
+                    trailing: const Text("INR")
                     // _buildDropDownButton(toCurrency),
                     ),
               ],
