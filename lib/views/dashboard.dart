@@ -1,4 +1,5 @@
 import 'package:assignment_app/controller/dashboardcontroller.dart';
+import 'package:assignment_app/views/currency.dart';
 import 'package:assignment_app/views/hoqwartcharacters.dart';
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
@@ -24,9 +25,9 @@ class _DashboardState extends State<Dashboard> {
         actions: [
           MaterialButton(
             onPressed: (() {
-              _controller.fetchcharacter();
+              _controller.fetchcode();
             }),
-            child: Text("Fetch"),
+            child: const Text("Fetch"),
           )
         ],
         title: const Text("Dashboard"),
@@ -38,7 +39,7 @@ class _DashboardState extends State<Dashboard> {
           ],
         ),
       ),
-      body: TabBarView(children: [HoqwartsCharacter(), Container()]),
+      body: TabBarView(children: [HoqwartsCharacter(), Currency()]),
     );
   }
 }

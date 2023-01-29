@@ -38,15 +38,15 @@ class HoqwartsModel {
   String? id;
   String? name;
   List<String>? alternateNames;
-  Species? species;
-  Gender? gender;
-  House? house;
-  DateOfBirth? dateOfBirth;
+  String? species;
+  String? gender;
+  String? house;
+  String? dateOfBirth;
   int? yearOfBirth;
   bool? wizard;
-  Ancestry? ancestry;
-  EyeColour? eyeColour;
-  HairColour? hairColour;
+  String? ancestry;
+  String? eyeColour;
+  String? hairColour;
   Wand? wand;
   Patronus? patronus;
   bool? hogwartsStudent;
@@ -66,15 +66,15 @@ class HoqwartsModel {
         alternateNames: json["alternate_names"] == null
             ? []
             : List<String>.from(json["alternate_names"]!.map((x) => x)),
-        species: speciesValues.map[json["species"]]!,
-        gender: genderValues.map[json["gender"]]!,
-        house: houseValues.map[json["house"]]!,
-        dateOfBirth: dateOfBirthValues.map[json["dateOfBirth"]]!,
+        species: json["species"] ?? "NA",
+        gender: json["gender"] ?? "NA",
+        house: json["house"] ?? "NA",
+        dateOfBirth: json["dateOfBirth"] ?? "NA",
         yearOfBirth: json["yearOfBirth"],
         wizard: json["wizard"],
-        ancestry: ancestryValues.map[json["ancestry"]]!,
-        eyeColour: eyeColourValues.map[json["eyeColour"]]!,
-        hairColour: hairColourValues.map[json["hairColour"]]!,
+        ancestry: json["ancestry"] ?? "NA",
+        eyeColour: json["eyeColour"] ?? "NA",
+        hairColour: json["hairColour"] ?? "NA",
         wand: json["wand"] == null ? null : Wand.fromJson(json["wand"]),
         patronus: patronusValues.map[json["patronus"]]!,
         hogwartsStudent: json["hogwartsStudent"],
@@ -93,15 +93,15 @@ class HoqwartsModel {
         "alternate_names": alternateNames == null
             ? []
             : List<dynamic>.from(alternateNames!.map((x) => x)),
-        "species": speciesValues.reverse[species],
-        "gender": genderValues.reverse[gender],
-        "house": houseValues.reverse[house],
-        "dateOfBirth": dateOfBirthValues.reverse[dateOfBirth],
+        "species": species,
+        "gender": gender,
+        "house": house,
+        "dateOfBirth": dateOfBirth,
         "yearOfBirth": yearOfBirth,
         "wizard": wizard,
-        "ancestry": ancestryValues.reverse[ancestry],
-        "eyeColour": eyeColourValues.reverse[eyeColour],
-        "hairColour": hairColourValues.reverse[hairColour],
+        "ancestry": ancestry,
+        "eyeColour": eyeColour,
+        "hairColour": hairColour,
         "wand": wand?.toJson(),
         "patronus": patronusValues.reverse[patronus],
         "hogwartsStudent": hogwartsStudent,
@@ -115,75 +115,75 @@ class HoqwartsModel {
       };
 }
 
-enum Ancestry { HALF_BLOOD, MUGGLEBORN, PURE_BLOOD, EMPTY }
+// enum Ancestry { HALF_BLOOD, MUGGLEBORN, PURE_BLOOD, EMPTY }
 
-final ancestryValues = EnumValues({
-  "": Ancestry.EMPTY,
-  "half-blood": Ancestry.HALF_BLOOD,
-  "muggleborn": Ancestry.MUGGLEBORN,
-  "pure-blood": Ancestry.PURE_BLOOD
-});
+// final ancestryValues = EnumValues({
+//   "": Ancestry.EMPTY,
+//   "half-blood": Ancestry.HALF_BLOOD,
+//   "muggleborn": Ancestry.MUGGLEBORN,
+//   "pure-blood": Ancestry.PURE_BLOOD
+// });
 
-enum DateOfBirth {
-  THE_31071980,
-  THE_19091979,
-  THE_01031980,
-  THE_05061980,
-  EMPTY,
-  THE_30071980,
-  THE_13021981,
-  THE_11081981
-}
+// enum DateOfBirth {
+//   THE_31071980,
+//   THE_19091979,
+//   THE_01031980,
+//   THE_05061980,
+//   EMPTY,
+//   THE_30071980,
+//   THE_13021981,
+//   THE_11081981
+// }
 
-final dateOfBirthValues = EnumValues({
-  "": DateOfBirth.EMPTY,
-  "01-03-1980": DateOfBirth.THE_01031980,
-  "05-06-1980": DateOfBirth.THE_05061980,
-  "11-08-1981": DateOfBirth.THE_11081981,
-  "13-02-1981": DateOfBirth.THE_13021981,
-  "19-09-1979": DateOfBirth.THE_19091979,
-  "30-07-1980": DateOfBirth.THE_30071980,
-  "31-07-1980": DateOfBirth.THE_31071980
-});
+// final dateOfBirthValues = EnumValues({
+//   "": DateOfBirth.EMPTY,
+//   "01-03-1980": DateOfBirth.THE_01031980,
+//   "05-06-1980": DateOfBirth.THE_05061980,
+//   "11-08-1981": DateOfBirth.THE_11081981,
+//   "13-02-1981": DateOfBirth.THE_13021981,
+//   "19-09-1979": DateOfBirth.THE_19091979,
+//   "30-07-1980": DateOfBirth.THE_30071980,
+//   "31-07-1980": DateOfBirth.THE_31071980
+// });
 
-enum EyeColour { GREEN, BROWN, BLUE, GREY, EMPTY, BLACK, DARK }
+// enum EyeColour { GREEN, BROWN, BLUE, GREY, EMPTY, BLACK, DARK }
 
-final eyeColourValues = EnumValues({
-  "black": EyeColour.BLACK,
-  "blue": EyeColour.BLUE,
-  "brown": EyeColour.BROWN,
-  "dark": EyeColour.DARK,
-  "": EyeColour.EMPTY,
-  "green": EyeColour.GREEN,
-  "grey": EyeColour.GREY
-});
+// final eyeColourValues = EnumValues({
+//   "black": EyeColour.BLACK,
+//   "blue": EyeColour.BLUE,
+//   "brown": EyeColour.BROWN,
+//   "dark": EyeColour.DARK,
+//   "": EyeColour.EMPTY,
+//   "green": EyeColour.GREEN,
+//   "grey": EyeColour.GREY
+// });
 
-enum Gender { MALE, FEMALE }
+// enum Gender { MALE, FEMALE }
 
-final genderValues = EnumValues({"female": Gender.FEMALE, "male": Gender.MALE});
+// final genderValues = EnumValues({"female": Gender.FEMALE, "male": Gender.MALE});
 
-enum HairColour { BLACK, BROWN, RED, BLONDE, EMPTY, SANDY, BLOND, DARK }
+// enum HairColour { BLACK, BROWN, RED, BLONDE, EMPTY, SANDY, BLOND, DARK }
 
-final hairColourValues = EnumValues({
-  "black": HairColour.BLACK,
-  "blond": HairColour.BLOND,
-  "blonde": HairColour.BLONDE,
-  "brown": HairColour.BROWN,
-  "dark": HairColour.DARK,
-  "": HairColour.EMPTY,
-  "red": HairColour.RED,
-  "sandy": HairColour.SANDY
-});
+// final hairColourValues = EnumValues({
+//   "black": HairColour.BLACK,
+//   "blond": HairColour.BLOND,
+//   "blonde": HairColour.BLONDE,
+//   "brown": HairColour.BROWN,
+//   "dark": HairColour.DARK,
+//   "": HairColour.EMPTY,
+//   "red": HairColour.RED,
+//   "sandy": HairColour.SANDY
+// });
 
-enum House { GRYFFINDOR, SLYTHERIN, HUFFLEPUFF, RAVENCLAW, EMPTY }
+// enum House { GRYFFINDOR, SLYTHERIN, HUFFLEPUFF, RAVENCLAW, EMPTY }
 
-final houseValues = EnumValues({
-  "": House.EMPTY,
-  "Gryffindor": House.GRYFFINDOR,
-  "Hufflepuff": House.HUFFLEPUFF,
-  "Ravenclaw": House.RAVENCLAW,
-  "Slytherin": House.SLYTHERIN
-});
+// final houseValues = EnumValues({
+//   "": House.EMPTY,
+//   "Gryffindor": House.GRYFFINDOR,
+//   "Hufflepuff": House.HUFFLEPUFF,
+//   "Ravenclaw": House.RAVENCLAW,
+//   "Slytherin": House.SLYTHERIN
+// });
 
 enum Patronus {
   STAG,
@@ -209,9 +209,9 @@ final patronusValues = EnumValues({
   "swan": Patronus.SWAN
 });
 
-enum Species { HUMAN }
+// enum Species { HUMAN }
 
-final speciesValues = EnumValues({"human": Species.HUMAN});
+// final speciesValues = EnumValues({"human": Species.HUMAN});
 
 class Wand {
   Wand({
